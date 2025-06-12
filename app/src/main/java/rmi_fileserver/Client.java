@@ -16,6 +16,7 @@ public class Client extends JFrame {
     private JButton uploadButton;
     private JButton downloadButton;
     private JButton deleteButton;
+    private JButton logoutButton;
 
     public Client() {
         try {
@@ -34,11 +35,23 @@ public class Client extends JFrame {
         uploadButton = new JButton("Upload");
         downloadButton = new JButton("Download");
         deleteButton = new JButton("Delete");
+        logoutButton = new JButton("Logout");
 
         loginButton.addActionListener(e -> login());
         uploadButton.addActionListener(e -> upload());
         downloadButton.addActionListener(e -> download());
         deleteButton.addActionListener(e -> delete());
+        logoutButton.addActionListener(e -> {
+            currentUser = null;
+            topPanel.remove(uploadButton);
+            topPanel.remove(downloadButton);
+            topPanel.remove(deleteButton);
+            topPanel.remove(logoutButton);
+            topPanel.add(loginButton);
+            topPanel.revalidate();
+            topPanel.repaint();
+        });
+
         topPanel.add(loginButton); // Adiciona apenas o botão de login inicialmente
 
         add(topPanel, BorderLayout.NORTH);
@@ -62,6 +75,7 @@ public class Client extends JFrame {
                 topPanel.add(uploadButton);
                 topPanel.add(downloadButton);
                 topPanel.add(deleteButton);
+                topPanel.add(logoutButton);
                 topPanel.revalidate();
                 topPanel.repaint();
 
