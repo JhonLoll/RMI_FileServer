@@ -15,3 +15,13 @@ Um servidor de arquivos utilizando a tecnologia RMI do Java, onde o usuário con
 - [@Hiago Ribeiro](https://github.com/Hiagoribas)
 
 
+
+## Utilização
+
+#### Para fazer login, informe:
+
+
+| Parâmetro   | Tipo       | Valor                           |
+| :---------- | :--------- | :---------------------------------- |
+| `Usuario` | `string` | **admin** |
+| `Senha` | `string` | **admin** |
